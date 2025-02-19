@@ -15,10 +15,15 @@ find_package(rclcpp_action REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(nav2_msgs REQUIRED)
 
-add_executable(waypoint_follower src/waypoint_follower.cpp)
-ament_target_dependencies(waypoint_follower rclcpp rclcpp_action geometry_msgs nav2_msgs)
+add_executable(waypoint_follower_single src/waypoint_follower_single.cpp)
+ament_target_dependencies(waypoint_follower_single rclcpp rclcpp_action geometry_msgs nav2_msgs)
 
-install(TARGETS waypoint_follower DESTINATION lib/${PROJECT_NAME})
+install(TARGETS waypoint_follower_single DESTINATION lib/${PROJECT_NAME})
+
+add_executable(waypoint_follower_mult src/waypoint_follower_mult.cpp)
+ament_target_dependencies(waypoint_follower_mult rclcpp rclcpp_action geometry_msgs nav2_msgs)
+
+install(TARGETS waypoint_follower_mult DESTINATION lib/${PROJECT_NAME})
 
 install(
   DIRECTORY launch urdf config worlds rviz
