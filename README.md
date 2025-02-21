@@ -47,6 +47,12 @@ sudo docker exec -it <docker-instance-id> bash
 ```
 This is required when one wants to run multiple ros2 commands in the same docker instance.
 
+# Turning on the X11 server (in the system, not inside docker instance)
+One needs to disable the access control on the x11 server for the display. Also check the `echo $DISPLAY` for the display number.
+```
+xhost +
+```
+
 # Clone Slam_toolbox and Nav2 in your ROS2 workspace (colcon_ws/src or ROS2_ws/src)
 Please do not forget to add Jazzy Branch of the repositories 
 ```
@@ -179,7 +185,8 @@ There are two parameters - `planner_server` for Global planner and `controller_s
 One can follow [this](https://gazebosim.org/docs/latest/actors/) to add a moving person called `Actor` in the Gazebo World.
  
 # Replanning Strtegies
- - To address replanning in presence of Dynamic Obstacles one can modify `bt_navigator.xml`. The parameter `wait_for_server_timeout` in the `ComputePathToPose` in the `Action` can changed to reduce time. Also recovery behavior can be introduced in the `spin_server`.
+ - To address replanning in presence of Dynamic Obstacles one can modify `nav2_bt_navigator/behavior_trees/*.xml`. The parameters `<RecoveryNode number_of_retries="6" name="NavigateRecovery">` can be increased (10 may be). Also recovery behavior can be introduced in the `spin_server`.
+ 
 
 
 
