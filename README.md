@@ -1,9 +1,9 @@
 # System Installation
  - `My System` : Ubuntu 22.04 with 16 GB RAM, Nvidia GTX 1650Ti with 4GB GPU Memory
- - `ROS2 Installation`: [Installation Instruction Link] (https://docs.ros.org/en/jazzy/Installation.html)
- - `NVIDIA DRIVER Installation` : [Installation Instruction Link] (https://ubuntu.com/server/docs/nvidia-drivers-installation)
- - `NVIDIA Docker2 Installation`: [Installation Instruction Link] (https://www.server-world.info/en/note?os=Ubuntu_22.04&p=nvidia&f=2)
- - `Docker Installation`: [Installation Instruction Link] (https://docs.docker.com/engine/install/)
+ - `ROS2 Installation`: [Installation Instruction Link](https://docs.ros.org/en/jazzy/Installation.html)
+ - `NVIDIA DRIVER Installation` : [Installation Instruction Link](https://ubuntu.com/server/docs/nvidia-drivers-installation)
+ - `NVIDIA Docker2 Installation`: [Installation Instruction Link](https://www.server-world.info/en/note?os=Ubuntu_22.04&p=nvidia&f=2)
+ - `Docker Installation`: [Installation Instruction Link](https://docs.docker.com/engine/install/)
 # Docker
  - Download this repository and go to the Docker folder. Ensure that Docker and Nvidia Docker2 is installed. Open a new termial inside the Docker folder or give the path in the following instruction
  
@@ -91,7 +91,7 @@ export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 ```
 ros2 launch diff_drive_robot robot.launch.py
 ```
-One can download as much world as needed in the "world" folder of the "diff_drive_robot" folder and download different differential drive robot models from [fuel model resources] (https://app.gazebosim.org/fuel/models) and [insert models into the gazebo world] (https://gazebosim.org/docs/latest/fuel_insert/) or write a ROS2 node/ launch to spawn the Robot in the World. 
+One can download as much world as needed in the "world" folder of the "diff_drive_robot" folder and download different differential drive robot models from [fuel model resources](https://app.gazebosim.org/fuel/models) and [insert models into the gazebo world](https://gazebosim.org/docs/latest/fuel_insert/) or write a ROS2 node/ launch to spawn the Robot in the World. 
 
 Note that Gazebo keeps running sometimes in the background after you finish working and do some modification and wants to run gazebo again please check
 ```
@@ -170,8 +170,8 @@ ros2 run diff_drive_robot waypoint_follower_mult
 # Global and Local Planner Tuning
 
 There are two parameters - `planner_server` for Global planner and `controller_server` in the `nav2_params.yaml` file which need to be tuned for improving Global and Local planning strtegies.
- - `planner_server` (Global Planner - Parameters): references -> [main] (https://docs.nav2.org/configuration/packages/configuring-planner-server.html), [NavFn Planner] (https://docs.nav2.org/configuration/packages/configuring-navfn.html#parameters), [smac Planner] (https://docs.nav2.org/configuration/packages/configuring-smac-planner.html), [Theta Star Planner] (https://docs.nav2.org/configuration/packages/configuring-thetastar.html)
- - `controller_server` (Local Planner - Parameters) : references -> [main] (https://docs.nav2.org/configuration/packages/configuring-controller-server.html), [DWB Controller] (https://docs.nav2.org/configuration/packages/configuring-dwb-controller.html), [MPPI Controller] (https://docs.nav2.org/configuration/packages/configuring-mppic.html), [RPP Controller] (https://docs.nav2.org/configuration/packages/configuring-regulated-pp.html#regulated-pure-pursuit-parameters), [RS Controller] (https://docs.nav2.org/configuration/packages/configuring-rotation-shim-controller.html), [Graceful Controller] (https://docs.nav2.org/configuration/packages/configuring-graceful-motion-controller.html)
+ - `planner_server` (Global Planner - Parameters): references -> [main](https://docs.nav2.org/configuration/packages/configuring-planner-server.html), [NavFn Planner](https://docs.nav2.org/configuration/packages/configuring-navfn.html#parameters), [smac Planner](https://docs.nav2.org/configuration/packages/configuring-smac-planner.html), [Theta Star Planner](https://docs.nav2.org/configuration/packages/configuring-thetastar.html)
+ - `controller_server` (Local Planner - Parameters) : references -> [main](https://docs.nav2.org/configuration/packages/configuring-controller-server.html), [DWB Controller](https://docs.nav2.org/configuration/packages/configuring-dwb-controller.html), [MPPI Controller](https://docs.nav2.org/configuration/packages/configuring-mppic.html), [RPP Controller](https://docs.nav2.org/configuration/packages/configuring-regulated-pp.html#regulated-pure-pursuit-parameters), [RS Controller](https://docs.nav2.org/configuration/packages/configuring-rotation-shim-controller.html), [Graceful Controller](https://docs.nav2.org/configuration/packages/configuring-graceful-motion-controller.html)
  - Notes: I have selected `smac planner` as a Global panner and `MPPI Controller` as a Local Planner.
  
 # Introduce Dynamic Obtacles in Gazebo World
